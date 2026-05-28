@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodontitis y Microbiología Subgingival</title>
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Iconos amigables -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado / Navegación -->
+    <header>
+        <div class="logo">Enfoque<span class="highlight">Periodontal</span></div>
+        <button class="menu-toggle" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#historia">Historia</a>
+            <a href="#microbiologia">Microbiología</a>
+            <a href="#patogenesis">Patogénesis</a>
+            <a href="#clinica">Clínica</a>
+            <a href="#tratamiento">Tratamiento</a>
+            <a href="#sabias-que">¿Sabías qué?</a>
+        </nav>
+    </header>
+
+    <!-- Sección Hero / Portada -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Periodontitis Crónica</h1>
+            <p>Una perspectiva microbiológica y clínica sobre la progresión silenciosa de la enfermedad periodontal.</p>
+            <a href="#patogenesis" class="btn-primary">Explorar Patogénesis</a>
+        </div>
+    </section>
+
+    <!-- 1. Introducción -->
+    <section class="container">
+        <div class="intro-box">
+            <h2>Introducción</h2>
+            <p>La periodontitis es una enfermedad inflamatoria crónica de origen infeccioso que afecta los tejidos de soporte del diente. Es causada principalmente por bacterias anaerobias que colonizan la placa subgingival, destacando <strong>Porphyromonas gingivalis</strong> y <strong>Tannerella forsythia</strong>.</p>
+            <p class="alert-text"><i class="fas fa-exclamation-circle"></i> Estas bacterias no solo provocan daño local, sino que también pueden influir en enfermedades sistémicas, convirtiéndola en un problema relevante de salud pública.</p>
+        </div>
+    </section>
+
+    <!-- 2. Aspectos Históricos (Línea de Tiempo) -->
+    <section id="history-section" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Aspectos Históricos</h2>
+            
+            <div class="timeline">
+                <div class="timeline-event">
+                    <div class="time-marker">S. XIX</div>
+                    <div class="timeline-content">
+                        <h3>Bacterias y Enfermedad</h3>
+                        <p>Se establece la relación directa entre la presencia de bacterias y las enfermedades periodontales.</p>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <div class="time-marker">1960-80</div>
+                    <div class="timeline-content">
+                        <h3>Patogenicidad Selectiva</h3>
+                        <p>Se identifica científicamente que no todas las bacterias de la boca son igual de patógenas.</p>
+                    </div>
+                </div>
+                <div class="timeline-event">
+                    <div class="time-marker">1998</div>
+                    <div class="timeline-content">
+                        <h3>Complejos de Socransky</h3>
+                        <p>Socransky clasifica las bacterias periodontales en complejos biológicos, destacando el <strong>Complejo Rojo</strong> como el más virulento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-note">
+                <p><strong>Nota taxonómica:</strong> <em>Tannerella forsythia</em> fue reclasificada a partir del género <em>Bacteroides</em>. Hoy en día se estudia bajo el concepto de <strong>disbiosis microbiana</strong> (desequilibrio bacteriano).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Estructura y Taxonomía -->
+    <section id="microbiologia" class="container">
+        <h2 class="section-title">Estructura, Taxonomía y Virulencia</h2>
+
+        <!-- Imagen ilustrativa del complejo de Socransky -->
+        <div class="image-center">
+            <img src="imagenes/Socransky.jpg" alt="Esquema del Complejo Rojo de Socransky" class="img-responsive">
+        </div>
+        
+        <div class="grid-3">
+            <!-- Taxonomía -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-dna"></i></div>
+                <h3>Taxonomía</h3>
+                <ul class="clean-list">
+                    <li><strong>Dominio:</strong> Bacteria</li>
+                    <li><strong>Filo:</strong> Bacteroidota</li>
+                    <li><strong>Clase:</strong> Bacteroidia</li>
+                    <li><strong>Orden:</strong> Bacteroidales</li>
+                    <li><strong>Género:</strong> <em>Porphyromonas gingivalis</em> y <em>Tannerella forsythia</em></li>
+                </ul>
+            </div>
+
+            <!-- Estructura -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                <h3>Características</h3>
+                <ul class="list-checked">
+                    <li>Bacilos Gram negativos</li>
+                    <li>Anaerobios estrictos</li>
+                    <li>Crecimiento lento</li>
+                    <li>Presencia de cápsula (P. gingivalis)</li>
+                    <li>Formación de biofilm subgingival</li>
+                </ul>
+            </div>
+
+            <!-- Factores de Virulencia -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-biohazard"></i></div>
+                <h3>Factores de Virulencia</h3>
+                <ul class="list-checked">
+                    <li><strong>Gingipainas:</strong> Degradan proteínas</li>
+                    <li><strong>Hemaglutininas:</strong> Adherencia celular</li>
+                    <li><strong>Fimbrias:</strong> Colonización masiva</li>
+                    <li><strong>LPS modificado:</strong> Inflamación atípica</li>
+                    <li><strong>Evasión inmune:</strong> Inhibición de neutrófilos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Patogénesis -->
+    <section id="patogenesis" class="bg-dark text-white">
+        <div class="container">
+            <h2 class="section-title">Patogénesis: El Proceso de Destrucción</h2>
+            <div class="steps-wrapper">
+                <div class="step-card">
+                    <span class="step-num">1</span>
+                    <p>Acumulación de placa bacteriana superficial.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">2</span>
+                    <p>Maduración y formación del <strong>biofilm subgingival</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">3</span>
+                    <p>Liberación de toxinas y enzimas bacterianas agresivas.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">4</span>
+                    <p>Activación desmedida de la respuesta inmune del huésped.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">5</span>
+                    <p>Inflamación crónica, pérdida ósea y formación de bolsas periodontales.</p>
+                </div>
+            </div>
+            <div class="crucial-fact">
+                <p><i class="fas fa-brain"></i> <strong>Dato Clave:</strong> Gran parte del daño tisular lo causa la propia respuesta inmunoinflamatoria del organismo, no únicamente la bacteria de forma directa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5, 6 y 10. Datos Clínicos, Epidemiología y Sistémica -->
+    <section id="clinica" class="container">
+        <h2 class="section-title">Epidemiología y Manifestaciones Clínicas</h2>
+
+        <!-- Nueva Galería Comparativa de Encías -->
+        <div class="grid-2 image-gallery">
+            <div class="image-card">
+                <img src="imagenes/encia-sana.jpg" alt="Características de una encía sana">
+                <p class="image-caption">Encía Sana: Color rosa coral, firme y sin sangrado.</p>
+            </div>
+            <div class="image-card">
+                <img src="imagenes/biofilm-dental-1.jpg" alt="Periodontitis con presencia de biofilm y sarro">
+                <p class="image-caption">Periodontitis: Presencia de biofilm subgingival, inflamación severa y destrucción de
+                    soporte.</p>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="content-box">
+                <h3><i class="fas fa-chart-pie"></i> Epidemiología y Riesgos</h3>
+                <p>Afecta a hasta el <strong>50% de los adultos</strong> en algún grado. Las formas graves impactan al 10–15% de la población mundial.</p>
+                <h4>Factores de Riesgo Clave:</h4>
+                <ul>
+                    <li>Tabaquismo (Principal factor modificable)</li>
+                    <li>Diabetes mellitus & Obesidad</li>
+                    <li>Estrés crónico y cambios hormonales</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3><i class="fas fa-tooth"></i> Manifestaciones por Fases</h3>
+                <div class="phase-box title-gingivitis">Fase Inicial (Gingivitis - Reversible)</div>
+                <p>Sangrado evidente durante el cepillado e inflamación moderada.</p>
+                
+                <div class="phase-box title-periodontitis">Fase Avanzada (Periodontitis)</div>
+                <p>Bolsas periodontales ≥4 mm, pérdida de inserción, movilidad dental, supuración y halitosis persistente.</p>
+            </div>
+        </div>
+
+        <!-- 10. Relación Sistémica -->
+        <div class="systemic-banner">
+            <h3><i class="fas fa-heartbeat"></i> Conexión con Enfermedades Sistémicas</h3>
+            <p>Debido a que las bacterias y mediadores inflamatorios viajan por el torrente sanguíneo, la periodontitis se asocia clínicamente con: <strong>Enfermedades cardiovasculares, Diabetes, Parto prematuro y Artritis Reumatoide</strong>.</p>
+        </div>
+    </section>
+
+    <!-- 7, 8 y 9. Diagnóstico, Tratamiento y Prevención -->
+    <section id="tratamiento" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Diagnóstico, Tratamiento y Prevención</h2>
+            
+            <div class="accordion">
+                <!-- Diagnóstico -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fas fa-stethoscope"></i> ¿Cómo se realiza el Diagnóstico?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Se realiza mediante exploración clínica periodontal usando el <strong>Sondaje (valores ≥4 mm indican patología)</strong>, evaluación de radiografías para medir la pérdida de hueso alveolar, índices periodontales y en ocasiones pruebas moleculares como PCR para detectar <em>P. gingivalis</em>.</p>
+                    </div>
+                </div>
+
+                <!-- Tratamiento -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fas fa-hand-holding-medical"></i> Esquema de Tratamiento Clínico</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p><strong>Fase Inicial:</strong> Educación estricta en higiene oral junto con raspado y alisado radicular (limpieza profunda subgingival).</p>
+                        <p><strong>Fase Avanzada:</strong> Uso de antibióticos sistémicos combinados (Metronidazol + amoxicilina), cirugía periodontal y técnicas de regeneración ósea.</p>
+                    </div>
+                </div>
+
+                <!-- Prevención -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fas fa-shield-virus"></i> Medidas Preventivas Diarias</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Correcta técnica de cepillado, uso diario de hilo dental o irrigadores, limpiezas profesionales cada 6 meses, dieta balanceada y eliminación estricta del consumo de tabaco.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. ¿Sabías que...? Interactivo -->
+    <section id="sabias-que" class="container text-center">
+        <h2 class="section-title">¿Sabías qué...?</h2>
+        <p>Haz clic en el botón para descubrir un dato clave e impactante sobre la salud periodontal.</p>
+        
+        <div class="fact-generator">
+            <div class="fact-display" id="fact-box">
+                Las encías sanas no sangran. El sangrado es la primera señal de alerta.
+            </div>
+            <button id="next-fact-btn" class="btn-primary">Descubrir otro dato curioso <i class="fas fa-random"></i></button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Plataforma Interactiva de Salud Bucal. Diseñado para divulgación académica.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
