@@ -1,37 +1,60 @@
-/* Variables de Color y Fuentes Modernas */
+/* ==========================================================================
+   VARIABLES DE COLOR Y FUENTES - ESTILO EDITORIAL ACADÉMICO
+   ========================================================================== */
 :root {
-    --primary-color: #0ea5e9;
-    /* Azul médico brillante */
+    /* Paleta Ejecutiva/Médica Intuitiva */
+    --primary-color: #0c4a6e;
+    /* Azul marino clínico profundo y serio */
+    --accent-blue: #0284c7;
+    /* Azul secundario para enlaces e interactividad */
     --dark-color: #0f172a;
-    /* Azul oscuro profundo */
+    /* Gris pizarra oscuro para contraste elegante */
     --light-color: #f8fafc;
-    /* Blanco grisáceo limpio */
-    --text-color: #334155;
-    /* Gris oscuro legible */
+    /* Fondo limpio de lectura beige/grisáceo sutil */
+    --text-color: #1e293b;
+    /* Texto de alta legibilidad (normas editoriales) */
+    --text-muted: #475569;
+    /* Para textos secundarios o pies de foto */
     --white: #ffffff;
-    --accent-red: #ef4444;
-    /* Rojo clínico de alerta */
+    --accent-red: #991b1b;
+    /* Rojo borgoña/clínico institucional (no chillón) */
+
+    /* Variables de Espaciado y Bordes */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --shadow-subtle: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    --shadow-hover: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.03);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ==========================================================================
+   RESET & TIPOGRAFÍA GLOBAL
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: var(--white);
     color: var(--text-color);
-    line-height: 1.6;
+    /* Interlineado óptimo para textos largos académicos */
+    line-height: 1.7;
+    /* Cambiamos a fuentes con mejor renderizado y aspecto premium */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Contenedores */
+/* ==========================================================================
+   CONTENEDORES Y MAQUETACIÓN
+   ========================================================================== */
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: 88%;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 80px 0;
+    /* Más espacio de respiración entre secciones */
 }
 
 .bg-light {
@@ -50,49 +73,67 @@ body {
     text-align: center;
 }
 
-/* Títulos */
+/* Títulos de Sección Estilo Paper */
 .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    color: var(--dark-color);
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    letter-spacing: -0.02em;
 }
 
 .bg-dark .section-title {
     color: var(--white);
 }
 
-/* Navegación Fija */
+/* Rediseño sutil decorativo debajo del título */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN SUPERIOR (Sticky Header)
+   ========================================================================== */
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    /* Efecto cristal moderno */
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5px;
+    padding: 18px 5%;
     z-index: 1000;
+    transition: var(--transition-smooth);
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: var(--dark-color);
-    margin-left: 5%;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    letter-spacing: -0.01em;
 }
 
 .highlight {
-    color: var(--primary-color);
+    color: var(--accent-blue);
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text-color);
-    margin-right: 20px;
+    color: var(--text-muted);
+    margin-left: 28px;
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
 }
 
 nav a:hover {
@@ -105,244 +146,342 @@ nav a:hover {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    margin-right: 5%;
+    color: var(--primary-color);
 }
 
-/* Hero / Portada */
+/* ==========================================================================
+   HERO / PORTADA INSTITUCIONAL
+   ========================================================================== */
 .hero {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(14, 165, 233, 0.85)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200') no-repeat center center/cover;
-    height: 70vh;
+    /* Gradiente más sobrio y profesional */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(12, 74, 110, 0.85)),
+        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200') no-repeat center center/cover;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 3.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    font-size: 1.25rem;
+    max-width: 720px;
+    margin: 0 auto 35px;
+    color: #e2e8f0;
+    font-weight: 300;
 }
 
+/* Botón Académico */
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--accent-blue);
     color: var(--white);
-    padding: 12px 28px;
+    padding: 14px 32px;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
+    border-radius: var(--radius-sm);
+    /* Bordes menos redondeados = Más serio/formal */
+    font-weight: 600;
+    font-size: 0.95rem;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: var(--transition-smooth);
     display: inline-block;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #0284c7;
-    transform: translateY(-2px);
+    background-color: #0369a1;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
 }
 
-/* Caja Introducción */
+/* ==========================================================================
+   BLOQUES DE TEXTO DESTACADO (Abstract / Introducción)
+   ========================================================================== */
 .intro-box {
-    background-color: #f0f9ff;
-    border-left: 5px solid var(--primary-color);
-    padding: 30px;
-    border-radius: 0 12px 12px 0;
+    background-color: #f0fdf4;
+    /* Verde/azul sutil higiénico */
+    border-left: 4px solid #16a34a;
+    padding: 35px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-subtle);
 }
 
 .intro-box h2 {
-    margin-bottom: 15px;
+    color: #14532d;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
 }
 
 .alert-text {
     margin-top: 15px;
-    color: #0369a1;
-    font-weight: 500;
+    color: #15803d;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
-/* Diseño Cuadrícula (Grids Responsivos) */
+/* ==========================================================================
+   GRIDS RESPONSIVOS
+   ========================================================================== */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
 }
 
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 45px;
 }
 
-/* Tarjetas */
+/* ==========================================================================
+   TARJETAS CIENTÍFICAS
+   ========================================================================== */
 .card {
     background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    padding: 35px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid rgba(15, 23, 42, 0.05);
     border-top: 4px solid var(--primary-color);
+    /* Indicador de color serio */
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 .card-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
 }
 
 .card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark-color);
     margin-bottom: 15px;
 }
 
+/* Listas Limpias */
 .list-checked li,
 .clean-list li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     list-style: none;
+    color: var(--text-muted);
+    font-size: 0.98rem;
 }
 
 .list-checked li::before {
-    content: "✓ ";
-    color: var(--primary-color);
+    content: "✓";
+    color: #16a34a;
     font-weight: bold;
+    margin-right: 10px;
 }
 
-/* Línea de Tiempo (Historia) */
+/* ==========================================================================
+   CRONOLOGÍA / HISTORIA CLÍNICA
+   ========================================================================== */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
+}
+
+.timeline::before {
+    /* Línea de tiempo vertical de fondo */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 2px;
+    height: 100%;
+    background: #e2e8f0;
 }
 
 .timeline-event {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 2;
 }
 
 .time-marker {
-    background: var(--primary-color);
-    color: var(--white);
-    font-weight: bold;
-    padding: 5px 15px;
-    border-radius: 20px;
-    min-width: 100px;
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    min-width: 120px;
     text-align: center;
     height: fit-content;
-    margin-right: 20px;
+    margin-right: 30px;
+    box-shadow: var(--shadow-subtle);
 }
 
 .timeline-content {
     background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 25px 30px;
+    border-radius: var(--radius-md);
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: var(--shadow-subtle);
 }
 
+/* Nota de información sutil */
 .info-note {
-    max-width: 800px;
-    margin: 30px auto 0;
-    background: #fef08a;
-    padding: 15px;
-    border-radius: 8px;
+    max-width: 850px;
+    margin: 40px auto 0;
+    background: #fefce8;
+    padding: 20px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid #ca8a04;
     color: #713f12;
+    font-size: 0.95rem;
 }
 
-/* Bloques de Patogénesis */
+/* ==========================================================================
+   SECCIONES DE PATOGÉNESIS (Bloques oscuros)
+   ========================================================================== */
 .steps-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
 }
 
 .step-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    width: 180px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    width: 220px;
     text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.step-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .step-num {
     display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
 }
 
+.step-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Alerta Crucial Roja */
 .crucial-fact {
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid var(--accent-red);
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 40px;
-    text-align: center;
+    background: rgba(153, 27, 27, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-left: 4px solid #ef4444;
+    padding: 25px;
+    border-radius: var(--radius-sm);
+    margin-top: 50px;
+    text-align: left;
     color: #fca5a5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Bloques Clínicos */
+/* ==========================================================================
+   BLOQUES CLÍNICOS (Gingivitis vs Periodontitis)
+   ========================================================================== */
 .content-box {
     background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    padding: 35px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid rgba(15, 23, 42, 0.04);
 }
 
 .phase-box {
-    padding: 10px 15px;
-    border-radius: 6px;
-    font-weight: bold;
-    margin: 15px 0 5px;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 25px 0 12px;
+    display: inline-block;
 }
 
 .title-gingivitis {
-    background: #ffe4e6;
-    color: #b91c1c;
+    background: #fff1f2;
+    color: #9f1239;
 }
 
 .title-periodontitis {
-    background: #fee2e2;
-    color: #991b1b;
+    background: #fef2f2;
+    color: var(--accent-red);
     border-left: 4px solid var(--accent-red);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
+/* Banner de Riesgo Sistémico */
 .systemic-banner {
-    background: linear-gradient(90deg, #0f172a, #1e293b);
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     color: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    margin-top: 40px;
+    padding: 40px;
+    border-radius: var(--radius-md);
+    margin-top: 50px;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .systemic-banner h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    color: #38bdf8;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
-/* Acordeones Interactivos */
+/* ==========================================================================
+   COMPONENTES INTERACTIVOS (Acordeones y Datos Curiosos)
+   ========================================================================== */
 .accordion {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
 .accordion-item {
     background: var(--white);
-    margin-bottom: 15px;
-    border-radius: 8px;
+    margin-bottom: 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(15, 23, 42, 0.06);
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.accordion-item:hover {
+    box-shadow: var(--shadow-subtle);
 }
 
 .accordion-header {
     width: 100%;
-    padding: 20px;
+    padding: 22px 25px;
     background: var(--white);
     border: none;
     display: flex;
@@ -351,50 +490,151 @@ nav a:hover {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    color: var(--dark-color);
+    color: var(--primary-color);
+    text-align: left;
+    transition: var(--transition-smooth);
+}
+
+.accordion-header:hover {
+    background-color: var(--light-color);
 }
 
 .accordion-content {
-    padding: 0 20px;
+    padding: 0 25px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    background: #f8fafc;
+    background: #fafafa;
+    color: var(--text-muted);
+    font-size: 0.98rem;
 }
 
-/* Generador de datos curiosos */
+/* Caja de Datos Curiosos / Notas Clínicas */
 .fact-generator {
-    max-width: 600px;
-    margin: 30px auto;
+    max-width: 650px;
+    margin: 40px auto;
     background: var(--light-color);
-    padding: 40px;
-    border-radius: 12px;
-    border: 2px dashed var(--primary-color);
+    padding: 45px;
+    border-radius: var(--radius-md);
+    border: 1px dashed rgba(12, 74, 110, 0.3);
+    box-shadow: var(--shadow-subtle);
+    text-align: center;
 }
 
 .fact-display {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-style: italic;
     font-weight: 500;
-    margin-bottom: 30px;
-    min-height: 70px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.6;
 }
 
+/* ==========================================================================
+   PIE DE PÁGINA (Footer)
+   ========================================================================== */
 footer {
     background: var(--dark-color);
-    color: #64748b;
+    color: #94a3b8;
     text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9rem;
+    padding: 40px 20px;
+    font-size: 0.88rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 📱 CONSULTAS RESPONSIVAS (Media Queries) */
+/* ==========================================================================
+   GESTIÓN DE IMÁGENES Y GALERÍAS COMPARTIDAS
+   ========================================================================== */
+.image-center {
+    display: flex;
+    justify-content: center;
+    margin: 45px 0;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.image-gallery {
+    margin-bottom: 60px;
+}
+
+.image-card {
+    background: var(--white);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.image-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 14px;
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   BIBLIOGRAFÍA COMPACTA ACADÉMICA (Estilo APA/Vancouver)
+   ========================================================================== */
+.bibliography-section {
+    margin-top: 60px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 40px;
+}
+
+.bibliography-list {
+    list-style-type: none;
+    padding-left: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bibliography-list li {
+    margin-bottom: 14px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    padding-left: 30px;
+    text-indent: -30px;
+    /* Sangría francesa perfecta */
+    color: var(--text-muted);
+}
+
+/* Tamaños Controlados de Imágenes Únicas */
+#img-respuesta-inmune,
+#img-respuesta-3 {
+    max-width: 55%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (Media Queries)
+   ========================================================================== */
 @media (max-width: 768px) {
+    .container {
+        padding: 50px 0;
+    }
+
     header {
-        padding: 15px 0;
+        padding: 15px 5%;
     }
 
     .menu-toggle {
@@ -409,8 +649,9 @@ footer {
         width: 100%;
         background: var(--white);
         flex-direction: column;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        padding: 25px;
+        border-top: 1px solid #f1f5f9;
     }
 
     nav.active {
@@ -418,15 +659,23 @@ footer {
     }
 
     nav a {
-        margin: 10px 0;
+        margin: 12px 0;
+        margin-left: 0;
+        font-size: 1rem;
     }
 
-    .grid-2 {
+    .grid-2,
+    .grid-3 {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
     }
 
     .steps-wrapper {
@@ -436,59 +685,29 @@ footer {
 
     .step-card {
         width: 100%;
-        max-width: 350px;
+        max-width: 100%;
+    }
+
+    .timeline::before {
+        left: 20px;
     }
 
     .timeline-event {
         flex-direction: column;
+        padding-left: 45px;
     }
 
     .time-marker {
-        margin-bottom: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: auto;
+        padding: 4px 12px;
+        margin-right: 0;
     }
-}
 
-/* --- ESTILOS PARA LAS IMÁGENES --- */
-
-/* Contenedor para centrar una sola imagen */
-.image-center {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-/* Hace que cualquier imagen se adapte al ancho de su contenedor y no se deforme */
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Galería comparativa */
-.image-gallery {
-    margin-bottom: 50px;
-}
-
-.image-card {
-    background: var(--light-color);
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.image-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    /* Recorta la imagen para que todas midan lo mismo sin deformarse */
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-.image-caption {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--dark-color);
+    #img-respuesta-inmune,
+    #img-respuesta-3 {
+        max-width: 90%;
+    }
 }
