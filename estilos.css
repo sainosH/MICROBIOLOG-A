@@ -32,6 +32,104 @@ header nav a:not(.btn-primary):hover {
     color: var(--primary-color) !important;
 }
 
+/* --- COMPORTAMIENTO BASE DE LA NAVEGACIÓN (ESCRITORIO) --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-menu a:not(.btn-primary-menu),
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary-menu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: var(--primary-color);
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.menu-toggle {
+    display: none;
+    /* Oculto en PC */
+}
+
+/* --- ADAPTABILIDAD TOTAL PARA CELULARES Y TABLETS (ACORDEÓN) --- */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+        /* Visible en celular */
+    }
+
+    .nav-menu {
+        display: none;
+        /* Oculto inicialmente en celular */
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+
+    /* Clase que inyectará JavaScript para abrir el acordeón */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a:not(.btn-primary-menu),
+    .dropdown-btn {
+        padding: 12px 8px;
+        width: 100%;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.95rem;
+    }
+
+    .btn-primary-menu {
+        margin-left: 0;
+        margin-top: 10px;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .dropdown-content {
+        position: static;
+        /* Se acopla al flujo vertical en celulares */
+        box-shadow: none;
+        border: none;
+        background-color: var(--light-color);
+        padding-left: 15px;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+
 /* Asegurar el comportamiento responsivo del botón móvil */
 @media (max-width: 1024px) {
     header .menu-toggle {
