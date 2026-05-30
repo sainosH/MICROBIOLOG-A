@@ -27,6 +27,72 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+header nav a:not(.btn-primary):hover {
+    background-color: var(--light-color);
+    color: var(--primary-color) !important;
+}
+
+/* Asegurar el comportamiento responsivo del botón móvil */
+@media (max-width: 1024px) {
+    header .menu-toggle {
+        display: block !important;
+    }
+
+    header nav {
+        display: none;
+        /* Tu JavaScript existente controlará la apertura de este navbar */
+    }
+}
+
+/* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 6px 0;
+    top: 100%;
+    left: 0;
+    z-index: 1100;
+}
+
+.dropdown-content a {
+    color: var(--text-color) !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: background 0.15s ease;
+}
+
+.dropdown-content a i {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    color: var(--primary-color);
+}
+
+/* Efectos Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color) !important;
+}
+
+.dropdown-btn:hover,
+header nav a:not(.btn-primary):hover {
+    background-color: var(--light-color);
+    color: var(--primary-color) !important;
+}
+
 /* ==========================================================================
    RESET & TIPOGRAFÍA GLOBAL
    ========================================================================== */
@@ -624,6 +690,33 @@ footer {
     margin: 0 auto;
     display: block;
 }
+
+.accordion-item.open .fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+#img-manifestaciones-clinicas {
+    max-width: 45%;
+    /* Cambia este porcentaje (50%, 40%) para ajustarla a tu gusto */
+    height: auto;
+    /* Mantiene la proporción para que no se deforme o estire */
+}
+
+#img-diagnostico {
+    max-width: 45%;
+    /* Cambia este porcentaje (50%, 40%) para ajustarla a tu gusto */
+    height: auto;
+    /* Mantiene la proporción para que no se deforme o estire */
+}
+
+#img-tratamiento {
+    max-width: 80%;
+    /* Cambia este porcentaje (50%, 40%) para ajustarla a tu gusto */
+    height: auto;
+    /* Mantiene la proporción para que no se deforme o estire */
+}
+
 
 /* ==========================================================================
    DISEÑO RESPONSIVO (Media Queries)
