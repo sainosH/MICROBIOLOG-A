@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // 1. MENÚ DESPLEGABLE (RESPONSIVE)
     const menuBtn = document.getElementById("menu-btn");
     const navbar = document.getElementById("navbar");
@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. ACORDEONES (SECCIÓN TRATAMIENTO)
     const accordionHeaders = document.querySelectorAll(".accordion-header");
-    
+
     accordionHeaders.forEach(header => {
         header.addEventListener("click", () => {
             const item = header.parentElement;
-            
+
             // Cerrar otros acordeones abiertos (opcional, estilo exclusivo)
             document.querySelectorAll(".accordion-item").forEach(otherItem => {
                 if (otherItem !== item) {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Obtener un dato aleatorio diferente al actual
             let currentFact = factBox.innerText;
             let newFact = currentFact;
-            
+
             while (newFact === currentFact) {
                 const randomIndex = Math.floor(Math.random() * facts.length);
                 newFact = facts[randomIndex];
